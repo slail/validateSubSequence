@@ -6,6 +6,20 @@ is a subsequence of the first one. A subsequence of an array is a set of numbers
  For instance, the numbers [1, 3, 4] form a subsequence of the array [1, 2, 3, 4] ,and so do the numbers [2, 4] .
  Note that a single number in an array and the array itself are both valid subsequences of the array.
 '''
+'''
+1. Traverse through both arrays.
+2. Keep moving through the main array.
+3. Check to see if the current element of the main array equals to the current element of the sequence.
+4. If there's a match in step 3, move through the sequence. 
+'''
 
 def validSequence(array, sequence):
-    # Code
+    arrIdx = 0
+    seqIdx = 0
+    while arrIdx < len(array) and seqIdx < len(sequence):
+        if array[arrIdx] == sequence[seqIdx]:
+            seqIdx += 1
+        arrIdx += 1
+    return seqIdx == len(sequence)
+
+print(validSequence([2, 4, 6, 8, 10, 12], [2, 6, 12]))
