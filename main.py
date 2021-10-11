@@ -12,7 +12,7 @@ is a subsequence of the first one. A subsequence of an array is a set of numbers
 3. Check to see if the current element of the main array equals to the current element of the sequence.
 4. If there's a match in step 3, move through the sequence. 
 '''
-
+# With While Loop
 def validSequence(array, sequence):
     arrIdx = 0
     seqIdx = 0
@@ -22,4 +22,15 @@ def validSequence(array, sequence):
         arrIdx += 1
     return seqIdx == len(sequence)
 
+# With For Loop
+def validSequence1(array, sequence):
+    seqIdx = 0
+    for value in array:
+        if seqIdx == len(sequence):
+            break
+        if value == sequence[seqIdx]:
+            seqIdx += 1
+    return seqIdx == len(sequence)
+
 print(validSequence([2, 4, 6, 8, 10, 12], [2, 6, 12]))
+print(validSequence1([2, 4, 6, 8, 10, 12], [4, 6, 10]))
