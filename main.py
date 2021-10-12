@@ -14,21 +14,21 @@ is a subsequence of the first one. A subsequence of an array is a set of numbers
 '''
 # With While Loop
 def validSequence(array, sequence):
-    arrIdx = 0
+    arrayIdx = 0
     seqIdx = 0
-    while arrIdx < len(array) and seqIdx < len(sequence):
-        if array[arrIdx] == sequence[seqIdx]:
+    while arrayIdx < len(array) and seqIdx < len(sequence):
+        if array[arrayIdx] == sequence[seqIdx]:
             seqIdx += 1
-        arrIdx += 1
+        arrayIdx += 1
     return seqIdx == len(sequence)
 
 # With For Loop
 def validSequence1(array, sequence):
     seqIdx = 0
-    for value in array:
+    for values in array:
         if seqIdx == len(sequence):
             break
-        if value == sequence[seqIdx]:
+        if values == sequence[seqIdx]:
             seqIdx += 1
     return seqIdx == len(sequence)
 
